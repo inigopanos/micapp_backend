@@ -12,9 +12,10 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/', router);
-// app.get('/', (req, resp) => {
-//   resp.send('Hola mundo');
-// });
+app.get('/', (req, resp) => {
+  console.log('Ha llegado una request');
+  resp.send('Hola mundo');
+});
 
 export const server = app.listen(port, () => {
   console.log(`Server listening in http://localhost:${port}`);

@@ -1,14 +1,8 @@
-import express from 'express';
+// import nodemailer from 'nodemailer';
+// import { GoogleApis } from 'googleapis';
 
-import nodemailer from 'nodemailer';
-import { GoogleApis } from 'googleapis';
-import { google } from 'googleapis';
-import dotenv from 'dotenv';
-
-dotenv.config();
-// const nodemailer = require('nodemailer');
-// const { google } = require('googleapis')
-
+const nodemailer = require('nodemailer');
+const { google } = require('googleapis');
 let config = process.env;
 const OAuth2 = google.auth.OAuth2;
 
@@ -31,8 +25,8 @@ function send_mail(name, recipient) {
       pass: process.env.MAIL_PASSWORD,
       clientId: process.env.OAUTH_CLIENTID,
       clientSecret: process.env.OAUTH_CLIENT_SECRET,
-      refreshToken: refresh_token,
-      accessToken: accessToken,
+      refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+      accessToken: process.env.OAUTH_ACCESS_TOKEN,
     },
   });
 
@@ -53,11 +47,15 @@ function send_mail(name, recipient) {
   });
 }
 
-const router = express.Router();
+let formulario1 = {
+  nombre: 'Pepe Pepón',
+  dia: '5/5/2022',
+  cuerpo: 'Policía Nacional',
+};
 
-router.post('/formulario', function (req, res) {
-  send_mail('Iñigo', 'inigopanos@gmail.com');
-});
-// router.get('/forms', getAllForms);
+const getAllForms = (req, res) => {
+  console.log(req.body);
+  res.send(formulario1);
+};
 
-export default router;
+// export { send_mail, getAllForms };
