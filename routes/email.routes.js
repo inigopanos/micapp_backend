@@ -4,6 +4,7 @@ import nodemailer from 'nodemailer';
 import { GoogleApis } from 'googleapis';
 import { google } from 'googleapis';
 import dotenv from 'dotenv';
+import path from 'path';
 
 dotenv.config();
 // const nodemailer = require('nodemailer');
@@ -19,9 +20,11 @@ const OAuth2_client = new OAuth2(
 
 OAuth2_client.setCredentials({ refresh_token: config.OAUTH_REFRESH_TOKEN });
 
-function send_mail(name, recipient) {
+function send_mail(name, recipient, filename) {
   const accessToken = OAuth2_client.getAccessToken();
-
+  console.log(filename, 'filename dentro de send_mail');
+  let ruta = `C:/Users/Usuario/Downloads/${filename}`;
+  console.log(ruta, ' ruta de archivo');
   let transporter = nodemailer.createTransport({
     // const accessToken = OAuth2_client.getAccessToken
     service: 'gmail',
@@ -41,6 +44,14 @@ function send_mail(name, recipient) {
     to: recipient,
     subject: 'Micapp Project',
     text: 'Prueba de Micapp, formulario detenido',
+    // filepath: path.dirname(`C:/Users/Usuario/Downloads/${filename}`),
+    attachments: [
+      {
+        filename: `${filename}.pdf`, // <= Here: made sure file name match
+        path: `../../../../../Users//Usuario//Downloads//${filename}.pdf`, // <= Here
+        contentType: 'application/pdf',
+      },
+    ],
   };
 
   transporter.sendMail(mailOptions, function (error, result) {
@@ -55,9 +66,21 @@ function send_mail(name, recipient) {
 
 const router = express.Router();
 
+// export const sendEmail = async (req, res, next) => {
+//   console.log(req.params, 'sendEmail');
+//   try {
+//     const result = await send_mail('Iñigo', 'inigopanos@gmail.com');
+//     res.status(201);
+//     res.json(result);
+//   } catch (err) {
+//     next(err, 'no se ha podido enviar el email.');
+//   }
+// };
+
 router.post('/formulario', function (req, res) {
-  send_mail('Iñigo', 'inigopanos@gmail.com');
+  // console.log(req.body, 'router post');
+  let pdf_filename = req.body.data;
+  send_mail('Iñigo', 'inigopanos@gmail.com', pdf_filename);
 });
-// router.get('/forms', getAllForms);
 
 export default router;

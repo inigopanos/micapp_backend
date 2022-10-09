@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import * as dotenv from 'dotenv';
+import sendEmail from './routes/email.routes.js';
 import router from './routes/email.routes.js';
 
 dotenv.config();
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/', router);
+// app.use('/formulario', sendEmail);
 app.get('/', (req, resp) => {
   console.log('Ha llegado una request');
   resp.send('Hola mundo');
