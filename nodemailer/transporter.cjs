@@ -31,7 +31,7 @@ function send_mail(name, recipient) {
   });
 
   let mailOptions = {
-    from: `Iñigo Vadci ${config.user}`,
+    from: `Iñigo ${config.user}`,
     to: recipient,
     subject: 'Micapp Project',
     text: 'Prueba de Micapp, formulario detenido',
