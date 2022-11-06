@@ -23,10 +23,12 @@ OAuth2_client.setCredentials({ refresh_token: config.OAUTH_REFRESH_TOKEN });
 function send_mail(name, recipient, filename) {
   const accessToken = OAuth2_client.getAccessToken();
   console.log(filename, 'filename dentro de send_mail');
+
   let ruta = `C:/Users/Usuario/Downloads/${filename}`;
   console.log(ruta, ' ruta de archivo');
+
   let transporter = nodemailer.createTransport({
-    // const accessToken = OAuth2_client.getAccessToken
+    host: 'smtp.gmail.com',
     service: 'gmail',
     auth: {
       type: 'OAuth2',
@@ -65,17 +67,6 @@ function send_mail(name, recipient, filename) {
 }
 
 const router = express.Router();
-
-// export const sendEmail = async (req, res, next) => {
-//   console.log(req.params, 'sendEmail');
-//   try {
-//     const result = await send_mail('Iñigo', 'inigopanos@gmail.com');
-//     res.status(201);
-//     res.json(result);
-//   } catch (err) {
-//     next(err, 'no se ha podido enviar el email.');
-//   }
-// };
 
 router.post('/formulario', function (req, res) {
   // console.log(req.body, 'router post');

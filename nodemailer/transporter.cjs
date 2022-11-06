@@ -15,6 +15,7 @@ OAuth2_client.setCredentials({ refresh_token: config.OAUTH_REFRESH_TOKEN });
 
 function send_mail(name, recipient) {
   const accessToken = OAuth2_client.getAccessToken();
+  const refresthToken2 = OAuth2_client.getRefreshToken();
 
   let transporter = nodemailer.createTransport({
     // const accessToken = OAuth2_client.getAccessToken

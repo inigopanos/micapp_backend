@@ -12,6 +12,11 @@ const port = 4000;
 app.use(express.json());
 app.use(cors());
 
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 app.use('/', router);
 // app.use('/formulario', sendEmail);
 app.get('/', (req, resp) => {
