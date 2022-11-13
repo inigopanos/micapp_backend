@@ -13,6 +13,8 @@ app.use(express.json());
 
 var corsOptions = {
   origin: 'https://micapp.netlify.app',
+  methods: ['GET', 'POST'],
+  origin: true,
   credentials: true,
 };
 
