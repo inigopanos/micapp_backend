@@ -10,7 +10,13 @@ export const app = express();
 const port = 4000;
 
 app.use(express.json());
-app.use(cors());
+
+var corsOptions = {
+  origin: 'https://micapp.netlify.app/tabs/tab1',
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
