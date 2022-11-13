@@ -16,6 +16,8 @@ var corsOptions = {
   credentials: true,
 };
 
+//Prueba
+
 app.use(cors(corsOptions));
 
 app.use(function (req, res, next) {
