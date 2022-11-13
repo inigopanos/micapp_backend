@@ -12,7 +12,7 @@ const port = 4000;
 app.use(express.json());
 
 var corsOptions = {
-  origin: 'https://micapp.netlify.app/tabs/tab1',
+  origin: 'https://micapp.netlify.app',
   credentials: true,
 };
 
