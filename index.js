@@ -32,6 +32,6 @@ app.get('/', (req, resp) => {
   resp.send('Hola mundo');
 });
 
-export const server = app.listen(port, () => {
-  console.log(`Server listening in http://localhost:${port}`);
+export const server = app.listen(process.env.PORT || 4000, () => {
+  console.log(`Server listening in http://localhost:${process.env.PORT}`);
 });
