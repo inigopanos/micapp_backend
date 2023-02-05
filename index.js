@@ -27,11 +27,18 @@ app.use(function (req, res, next) {
   next();
 });
 
+const frontend_files =
+  'C:\\Users\\Usuario\\Desktop\\MICAPP-Diego\\micapp\\dist';
+
 app.use('/', router);
 // app.use('/formulario', sendEmail);
+
+app.use(express.static(frontend_files));
+
 app.get('/', (req, resp) => {
   console.log('Ha llegado una request');
   resp.send('Hola mundo');
+  // express.static(frontend_files);
 });
 
 export const server = app.listen(process.env.PORT || 4000, () => {
