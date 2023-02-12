@@ -1,0 +1,107 @@
+[33mcommit b56a7c42f3dd1e89e7a9cbab925c24cd3603a10b[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Iñigo <inigopanos@gmail.com>
+Date:   Sun Feb 12 10:04:18 2023 +0100
+
+    Añadido dist con dirección de PC
+
+[33mcommit 92cf5676a92052b9a8fd2f950eee65112b3cacb2[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Feb 5 19:42:30 2023 +0100
+
+    Modificados valores de index.js y Procfile para Heroku.
+
+[33mcommit 7db2db58ffe053379f8cc7984890a7cbb070dd2e[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Feb 5 18:57:49 2023 +0100
+
+    Vinculado el dist de frontend una vez buildeado con el backend. Funciona perfecto.
+
+[33mcommit 5c392c003f78e50676e9e6a2ddd888173381bdfd[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Nov 13 19:22:46 2022 +0100
+
+    Quitado app.use, puesto origin a micaapp.netlify/tabs/tab1
+
+[33mcommit bbee099057d6617f0cf600dc4db6ceaa7a873507[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Nov 13 19:19:49 2022 +0100
+
+    En app.use access-control...
+
+[33mcommit f82917aa5cd64f136c5936d34c3ba927da001e4f[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Nov 13 19:10:08 2022 +0100
+
+    Cambiado origin a * de micapp.netlify.app
+
+[33mcommit f6a70e4a4729cc80425372faaac6322fcbbb7b33[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Nov 13 19:06:34 2022 +0100
+
+    Añadido methods y origin al corsOptions
+
+[33mcommit 5f17e5e7df13a3697270cf6a0fa3dcd2123fc63c[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Nov 13 18:58:45 2022 +0100
+
+    Cambiado el origin por https://micapp.netlify.app que es lo que da el error de cors
+
+[33mcommit 25b036fc2b1a215032eb7e2fc5e4bd2e5d12fb97[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Nov 13 18:56:31 2022 +0100
+
+    Añadido https://micapp.netlify.app/tabs/tab1 a origin en corsOptions
+
+[33mcommit 2145bf00c13f4626e4715d6f3fcf04314df45c4f[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Nov 13 18:46:31 2022 +0100
+
+    Añadido process.env.PORT al listen de index.js para arreglar error de heroku failed to bind to  after 60 seconds
+
+[33mcommit f7b8c84de8a2469f663beaf83dfc2ac24294a942[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Nov 13 18:20:22 2022 +0100
+
+    Cambiado el origen de cors a *
+
+[33mcommit 97d62adb0d95a50661c830b69c55aa023c21bb21[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Nov 13 18:10:03 2022 +0100
+
+    Añadido comentario de prueba para ver si se actualiza Heroku
+
+[33mcommit b8eb14738eae465d244bb8f4787eb0e22805e3c3[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Nov 13 17:53:52 2022 +0100
+
+    Añadido corsOptions en index.js con origen en el netlify y credentials = true
+
+[33mcommit e71df43638aed85cab4effd95d95e67ba8f4e1a1[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Nov 6 18:31:27 2022 +0100
+
+    Añadido app.use(header) access-control-allow-origin a index.js según respuestas internet
+
+[33mcommit 798b33e372f22b808569c017a5a5ea9104b69ed8[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Oct 9 20:18:00 2022 +0200
+
+    Funciona perfecto, arreglado el problema del filename y filepath
+
+[33mcommit fe1bbb330b9728241532a6e16121f974bfabfacc[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Oct 9 18:28:31 2022 +0200
+
+    Arreglado error de OAuth2 usando los datos de acceso de la nueva cuenta usando pruebamicapp@gmail.com. Los correos se envían con el texto de prueba de forma correcta
+
+[33mcommit b767325d531cd6792ad3c08bef94caab8bf1def9[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Sun Oct 2 17:18:39 2022 +0200
+
+    En principio conseguido y arreglado todo menos lo más importante que es lo de Google. Tengo un problema con google oauth2 que manda un invalid_grant una vez se hace el post desde la web. Seguir mirando respuestas.
+
+[33mcommit 5d405f55f7dd62643e0fad0e9a125d8778dd29cc[m
+Author: Íñigo Paños <inigopanos@gmail.com>
+Date:   Wed Sep 28 00:08:42 2022 +0200
+
+    Creado backend, arreglar error de oauth0
