@@ -12,7 +12,7 @@ const PORT = process.env.PORT;
 app.use(express.json());
 //'https://micapp.netlify.app'
 var corsOptions = {
-  origin: 'https://micapp.netlify.app/tabs/tab1',
+  origin: '*',
   methods: ['GET', 'POST'],
   origin: true,
   credentials: true,
@@ -20,7 +20,7 @@ var corsOptions = {
 
 //Prueba
 // const cors = require('cors');
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(function (req, res, next) {
   //res.header('Access-Control-Allow-Origin', '*');
