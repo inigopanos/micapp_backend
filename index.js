@@ -11,11 +11,11 @@ const PORT = process.env.PORT;
 
 app.use(express.json());
 const corsOptions = {
-  origin: 'com.micapp.app',
+  origin: 'http://localhost',
   methods: ['GET', 'POST'],
 };
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 // app.use(function (req, res, next) { 
 //   // res.header('Access-Control-Allow-Origin', 'com.micapp.app');
