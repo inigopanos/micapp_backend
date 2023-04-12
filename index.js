@@ -11,7 +11,7 @@ const PORT = process.env.PORT;
 
 app.use(express.json());
 var corsOptions = {
-  origin: 'com.micapp.app',
+  origin: 'com.micapp.app' || 'http://localhost/tabs/tab1',
   methods: ['GET', 'POST'],
 };
 
