@@ -15,12 +15,12 @@ const corsOptions = {
   methods: ['GET', 'POST'],
 };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
-app.use(function (req, res, next) { 
-  // res.header('Access-Control-Allow-Origin', 'com.micapp.app');
-  next();
-});
+// app.use(function (req, res, next) { 
+//   // res.header('Access-Control-Allow-Origin', 'com.micapp.app');
+//   next();
+// });
 
 app.use('/', router);
 
@@ -28,6 +28,10 @@ app.use('/', router);
 app.get('/', (req, resp) => {
   console.log('Ha llegado una request');
   resp.send('Hola mundo');
+});
+
+app.get('/formulario', (req, resp) => {
+  resp.send('Página del formulario');
 });
 
 //Añadido dynos
