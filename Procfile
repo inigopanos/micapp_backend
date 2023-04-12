@@ -1,1 +1,1 @@
-web: node app.js -p 4000
+web: node server.js -p 4000
