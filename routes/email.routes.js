@@ -20,7 +20,6 @@ const OAuth2_client = new OAuth2(
 
 OAuth2_client.setCredentials({ refresh_token: config.OAUTH_REFRESH_TOKEN });
 
-resp.send('Después de app.use("/")');
 
 function send_mail(name, recipient, filename) {
   const accessToken = OAuth2_client.getAccessToken();
@@ -74,7 +73,7 @@ router.post('/formulario', function (req, res) {
   // console.log(req.body, 'router post');
   let pdf_filename = req.body.data;
   send_mail('Iñigo', 'inigopanos@gmail.com', pdf_filename);
-  resp.send('Email enviado correctamente!');
+  res.send('Email enviado correctamente!');
 });
 
 export default router;
