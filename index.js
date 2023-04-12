@@ -10,12 +10,11 @@ export const app = express();
 const PORT = process.env.PORT;
 
 app.use(express.json());
-var corsOptions = {
+const corsOptions = {
   origin: 'com.micapp.app' || 'http://localhost',
   methods: ['GET', 'POST'],
 };
 
-//Prueba
 app.use(cors(corsOptions));
 
 app.use(function (req, res, next) { 
@@ -23,21 +22,12 @@ app.use(function (req, res, next) {
   next();
 });
 
-const frontend_files =
-  'C:\\Users\\Usuario\\Desktop\\MICAPP-Diego\\micapp\\dist';
-
-const frontent_files_desktop = 
-'D:\\Micapp\\micapp-frontend\\dist'
-
 app.use('/', router);
-// app.use('/formulario', sendEmail);
 
-// app.use(express.static(frontent_files_desktop));
 
 app.get('/', (req, resp) => {
   console.log('Ha llegado una request');
   resp.send('Hola mundo');
-  // express.static(frontend_files);
 });
 
 //Añadido dynos
