@@ -10,16 +10,12 @@ export const app = express();
 const PORT = process.env.PORT;
 
 app.use(express.json());
-//'https://micapp.netlify.app'
 var corsOptions = {
   origin: 'com.micapp.app',
   methods: ['GET', 'POST'],
-  origin: true,
-  credentials: true,
 };
 
 //Prueba
-// const cors = require('cors');
 app.use(cors(corsOptions));
 
 app.use(function (req, res, next) { 
