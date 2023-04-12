@@ -72,6 +72,7 @@ router.post('/formulario', function (req, res) {
   // console.log(req.body, 'router post');
   let pdf_filename = req.body.data;
   send_mail('Iñigo', 'inigopanos@gmail.com', pdf_filename);
+  resp.send('Email enviado correctamente!');
 });
 
 export default router;
