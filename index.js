@@ -36,7 +36,7 @@ const frontent_files_desktop =
 app.use('/', router);
 // app.use('/formulario', sendEmail);
 
-app.use(express.static(frontent_files_desktop));
+// app.use(express.static(frontent_files_desktop));
 
 app.get('/', (req, resp) => {
   console.log('Ha llegado una request');
