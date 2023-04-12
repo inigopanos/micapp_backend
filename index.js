@@ -22,8 +22,9 @@ var corsOptions = {
 // const cors = require('cors');
 app.use(cors(corsOptions));
 
-app.use(function (req, res, next) {
-  //res.header('Access-Control-Allow-Origin', '*');
+app.use(function (req, res, next) { 
+  console.log('Llega aquí')
+  res.header('Access-Control-Allow-Origin', 'com.micapp.app');
   next();
 });
 
