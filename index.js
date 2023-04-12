@@ -7,7 +7,7 @@ import router from './routes/email.routes.js';
 dotenv.config();
 
 export const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT;
 
 app.use(express.json());
 //'https://micapp.netlify.app'
@@ -46,6 +46,6 @@ app.get('/', (req, resp) => {
 
 //Añadido dynos
 
-export const server = app.listen(PORT, () => {
+export const server = app.listen(PORT || 4000, () => {
   console.log(`Server listening in http://localhost:4000`);
 });
