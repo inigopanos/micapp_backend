@@ -20,6 +20,8 @@ const OAuth2_client = new OAuth2(
 
 OAuth2_client.setCredentials({ refresh_token: config.OAUTH_REFRESH_TOKEN });
 
+resp.send('Después de app.use("/")');
+
 function send_mail(name, recipient, filename) {
   const accessToken = OAuth2_client.getAccessToken();
   console.log(filename, 'filename dentro de send_mail');
