@@ -27,7 +27,7 @@ function send_mail(name, recipient) {
       clientId: process.env.OAUTH_CLIENTID,
       clientSecret: process.env.OAUTH_CLIENT_SECRET,
       refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-      accessToken: process.env.OAUTH_ACCESS_TOKEN,
+      accessToken: access,
     },
   });
 
@@ -59,4 +59,4 @@ const getAllForms = (req, res) => {
   res.send(formulario1);
 };
 
-export { send_mail, getAllForms };
+// export { send_mail, getAllForms };
