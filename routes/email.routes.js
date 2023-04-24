@@ -30,7 +30,6 @@ function send_mail(name, recipient, filename) {
   let ruta = `C:/Users/Usuario/Downloads/${filename}`;
 
   console.log(accessToken, 'accessToken pasado por OAuth2_client.getAccessToken() \n')
-  console.log(ruta, ' ruta de archivo');
 
   let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
