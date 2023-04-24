@@ -27,9 +27,10 @@ OAuth2_client.credentials = {
 function send_mail(name, recipient, filename) {
   const accessToken = OAuth2_client.getAccessToken(); //Falla aquí
 
-  console.log(accessToken, 'accessToken pasado por OAuth2_client.getAccessToken()')
+  
   let ruta = `C:/Users/Usuario/Downloads/${filename}`;
-  console.log(ruta, ' ruta de archivo');
+  console.log(accessToken, 'accessToken pasado por OAuth2_client.getAccessToken()')
+  console.log(ruta, ' ruta de archivo', accessToken);
 
   let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
