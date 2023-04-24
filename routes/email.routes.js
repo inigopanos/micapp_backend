@@ -35,7 +35,7 @@ function send_mail(name, recipient, filename) {
       type: 'OAuth2',
       user: process.env.USER,
       refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-      accessToken: accessToken.token,
+      accessToken: accessToken,
       pass: process.env.MAIL_PASSWORD,
       clientId: process.env.OAUTH_CLIENTID,
       clientSecret: process.env.OAUTH_CLIENT_SECRET,
