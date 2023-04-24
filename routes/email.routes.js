@@ -32,36 +32,23 @@ function send_mail(name, recipient, filename) {
   console.log(accessToken, 'accessToken pasado por OAuth2_client.getAccessToken() \n')
   console.log(ruta, ' ruta de archivo');
 
-  // let transporter = nodemailer.createTransport({
-  //   host: 'smtp.gmail.com',
-  //   service: 'gmail',
-  //   auth: {
-  //     type: 'OAuth2',
-  //     user: process.env.USER,
-  //     refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-  //     accessToken: accessToken,
-  //     pass: process.env.MAIL_PASSWORD,
-  //     clientId: process.env.OAUTH_CLIENTID,
-  //     clientSecret: process.env.OAUTH_CLIENT_SECRET,
-  //   },
-  //   tls: {
-  //     rejectUnauthorized: false
-  //   }
-  // });
   let transporter = nodemailer.createTransport({
-    // const accessToken = OAuth2_client.getAccessToken
     host: 'smtp.gmail.com',
     service: 'gmail',
     auth: {
       type: 'OAuth2',
-      user: config.user,
+      user: process.env.USER,
+      refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+      accessToken: accessToken,
       pass: process.env.MAIL_PASSWORD,
       clientId: process.env.OAUTH_CLIENTID,
       clientSecret: process.env.OAUTH_CLIENT_SECRET,
-      refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-      accessToken: access,
     },
+    tls: {
+      rejectUnauthorized: false
+    }
   });
+  
 
   let mailOptions = {
     from: `Iñigo Vadci ${config.user}`,
