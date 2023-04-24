@@ -59,4 +59,4 @@ const getAllForms = (req, res) => {
   res.send(formulario1);
 };
 
-// export { send_mail, getAllForms };
+export { send_mail, getAllForms };
