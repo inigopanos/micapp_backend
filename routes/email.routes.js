@@ -39,8 +39,10 @@ function send_mail(name, recipient, filename) {
       pass: process.env.MAIL_PASSWORD,
       clientId: process.env.OAUTH_CLIENTID,
       clientSecret: process.env.OAUTH_CLIENT_SECRET,
-     
     },
+    tls: {
+      rejectUnauthorized: false
+    }
   });
 
   let mailOptions = {
