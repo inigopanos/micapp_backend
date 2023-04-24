@@ -57,7 +57,7 @@ function send_mail(name, recipient, filename) {
     auth: {
       user: process.env.USER,
       refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-      accessToken: accessToken,
+      accessToken: accessToken.token,
     }
   };
 
