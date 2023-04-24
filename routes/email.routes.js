@@ -27,7 +27,7 @@ OAuth2_client.credentials = {
 function send_mail(name, recipient, filename) {
   const accessToken = OAuth2_client.getAccessToken(); //Falla aquí
   
-  // console.log('Refresh Token: ', refreshToken, '\n')
+  console.log('Refresh Token: ', refreshToken, '\n')
   console.log('PRUEBA PRUEBA PRUEBA ---------------------------------')
   let ruta = `C:/Users/Usuario/Downloads/${filename}`;
 
