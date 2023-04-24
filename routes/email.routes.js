@@ -12,8 +12,8 @@ let config = process.env;
 const OAuth2 = google.auth.OAuth2;
 
 const OAuth2_client = new OAuth2(
-  config.OAUTH_CLIENTID,
-  config.OAUTH_CLIENT_SECRET,
+  338198883768-jvdbm4vpejg51dv9vvb4f8vsc2mqus2b.apps.googleusercontent.com,
+  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,
   "https://developers.google.com/oauthplayground"
 );
 
