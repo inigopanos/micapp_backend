@@ -33,12 +33,11 @@ function send_mail(name, recipient, filename) {
     service: 'gmail',
     auth: {
       type: 'OAuth2',
-      user: process.env.USER,
+      
       pass: process.env.MAIL_PASSWORD,
       clientId: process.env.OAUTH_CLIENTID,
       clientSecret: process.env.OAUTH_CLIENT_SECRET,
-      refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-      accessToken: accessToken,
+     
     },
   });
 
@@ -55,6 +54,11 @@ function send_mail(name, recipient, filename) {
         contentType: 'application/pdf',
       },
     ],
+    auth: {
+      user: process.env.USER,
+      refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+      accessToken: accessToken,
+    }
   };
 
   transporter.sendMail(mailOptions, function (error, result) {
