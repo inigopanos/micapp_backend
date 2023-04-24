@@ -17,10 +17,8 @@ const OAuth2_client = new OAuth2(
   "https://developers.google.com/oauthplayground"
 );
 
-OAuth2_client.setCredentials({ refresh_token: process.env.OAUTH_REFRESH_TOKEN})
-// OAuth2_client.credentials = {
-//   refresh_token: config.OAUTH_REFRESH_TOKEN
-// };
+OAuth2_client.setCredentials({ refresh_token: dotenv.OAUTH_REFRESH_TOKEN})
+
 
 function send_mail(name, recipient, filename) {
   const accessToken = OAuth2_client.getAccessToken(); //Falla aquí
