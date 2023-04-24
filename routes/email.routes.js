@@ -17,7 +17,7 @@ const OAuth2_client = new OAuth2(
   "https://developers.google.com/oauthplayground"
 );
 
-OAuth2_client.setCredentials({ refresh_token: '1//04vjlSuIaeGFBCgYIARAAGAQSNwF-L9IrX0VisAin4fWZ8_4MkAq4MLsrh5eBsLlvE0kMx853cEDbU76f3K0pn4dHjm4CVL844zU'})
+OAuth2_client.setCredentials({ refresh_token: process.env.OAUTH_REFRESH_TOKEN})
 // OAuth2_client.credentials = {
 //   refresh_token: config.OAUTH_REFRESH_TOKEN
 // };
