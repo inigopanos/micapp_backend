@@ -56,7 +56,9 @@ function send_mail(name, recipient, filename) {
     attachments: [
       {
         filename: `${filename}.pdf`, // <= Here: made sure file name match
-        path: `C//::Users//Usuario//Downloads//${filename}.pdf`, // <= Here
+        path: `Documents//Micapp///${filename}.pdf`, // <= Here
+        //Documents//Micapp//
+        // C//::Users//Usuario//Downloads//${filename}.pdf
         contentType: 'application/pdf',
       },
     ],
