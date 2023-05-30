@@ -65,7 +65,7 @@ function send_mail(name, recipient, filename, pdf) {
     ],
   };
 
-  console.log({mailOptions})
+  console.log(mailOptions.attachments)
   transporter.sendMail(mailOptions, function (error, result) {
     if (error) {
       console.log('Error: ', error);
