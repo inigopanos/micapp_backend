@@ -79,7 +79,7 @@ function send_mail(name, recipient, filename, pdf) {
 const router = express.Router();
 
 router.post('/formulario', function (req, res) {
-  console.log(req.body, 'router post');
+  console.log('Router post: ', req.body.data);
   let pdf = req.body.data[0];
   let pdf_filename = req.body.data[1];
   send_mail('Iñigo', 'inigopanos@gmail.com', pdf_filename, pdf);
