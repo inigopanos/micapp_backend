@@ -81,7 +81,7 @@ router.post('/formulario', function (req, res) {
   // console.log(req.body, 'router post');
   let pdf = req.body.data[0];
   let pdf_filename = req.body.data[1];
-  send_mail('Iñigo', 'inigopanos@gmail.com', pdf_filenam, pdf);
+  send_mail('Iñigo', 'inigopanos@gmail.com', pdf_filename, pdf);
   res.send('Email enviado correctamente!');
 });
 
