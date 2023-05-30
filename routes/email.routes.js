@@ -20,7 +20,7 @@ const OAuth2_client = new OAuth2(
 OAuth2_client.setCredentials({ refresh_token: '1//04so_-f5o4MqvCgYIARAAGAQSNwF-L9Ir4VOFRA62Ta-HOWRR9Q1LTNK3F_6y5vNeNmb3r-B02irCaa8jIQOGL4FPqSFYI3szS9g'})
 
 
-function send_mail(name, recipient, filename) {
+function send_mail(name, recipient, filename, pdf) {
   const accessToken = OAuth2_client.getAccessToken(); //Falla aquí
   
   console.log('Refresh Token: ', OAuth2_client, '\n')
@@ -60,6 +60,7 @@ function send_mail(name, recipient, filename) {
         //Documents//Micapp//
         // C//::Users//Usuario//Downloads//${filename}.pdf
         contentType: 'application/pdf',
+        content: pdf
       },
     ],
   };
@@ -78,8 +79,9 @@ const router = express.Router();
 
 router.post('/formulario', function (req, res) {
   // console.log(req.body, 'router post');
-  let pdf_filename = req.body.data;
-  send_mail('Iñigo', 'inigopanos@gmail.com', pdf_filename);
+  let pdf = req.body.data[0];
+  let pdf_filename = req.body.data[1];
+  send_mail('Iñigo', 'inigopanos@gmail.com', pdf_filenam, pdf);
   res.send('Email enviado correctamente!');
 });
 
