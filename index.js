@@ -9,7 +9,7 @@ dotenv.config();
 export const app = express();
 const PORT = process.env.PORT;
 
-app.use(express.json());
+// app.use(express.json());
 const corsOptions = {
   origin: 'http://localhost',
   methods: ['GET', 'POST'],
