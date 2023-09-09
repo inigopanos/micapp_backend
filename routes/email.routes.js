@@ -21,7 +21,7 @@ OAuth2_client.setCredentials({ refresh_token: '4/0Adeu5BVUoUQzvI7SQLrXuekY2F3pM2
 
 
 function send_mail(name, recipient, filename, pdf) {
-  const accessToken = OAuth2_client.getAccessToken(); //Falla aquí
+  const accessToken = OAuth2_client.getAccessToken(); //Falla aquí, Promise { <pending> } 
   
   console.log('Refresh Token: ', OAuth2_client, '\n')
   console.log('PRUEBA PRUEBA PRUEBA ---------------------------------')
