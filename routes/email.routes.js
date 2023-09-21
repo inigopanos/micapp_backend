@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
 import dotenv from 'dotenv';
 
-dotenv.config();
+dotenv.config({path: '../.env'});
 // const nodemailer = require('nodemailer');
 // const { google } = require('googleapis')
 
@@ -18,6 +18,7 @@ const OAuth2_client = new OAuth2(
 );
 
 token_refresco = config.OAUTH_REFRESH_TOKEN;
+console.log('Config:', config);
 
 OAuth2_client.setCredentials({ refresh_token: token_refresco})
 
