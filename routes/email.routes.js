@@ -84,7 +84,7 @@ const router = express.Router();
 // NO GUARDO EL PDF EN NINGÚN SITIO!!!
 
 router.post('/formulario', function (req, res) {
-  console.log('Router post: ', req.body);
+  console.log('Router post: ', req);
   let pdf = req.body.data[0];
   let pdf_filename = req.body.data[1];
   send_mail('Iñigo', 'inigopanos@gmail.com', pdf_filename, pdf);
