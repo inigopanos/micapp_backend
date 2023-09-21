@@ -17,7 +17,7 @@ const OAuth2_client = new OAuth2(
   "https://developers.google.com/oauthplayground"
 );
 
-token_refresco = config.OAUTH_REFRESH_TOKEN;
+let token_refresco = config.OAUTH_REFRESH_TOKEN;
 console.log('Config:', config);
 
 OAuth2_client.setCredentials({ refresh_token: token_refresco})
