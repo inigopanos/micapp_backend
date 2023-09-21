@@ -17,7 +17,9 @@ const OAuth2_client = new OAuth2(
   "https://developers.google.com/oauthplayground"
 );
 
-OAuth2_client.setCredentials({ refresh_token: '4/0Adeu5BVUoUQzvI7SQLrXuekY2F3pM2JPQrx53l0s0dfb-0yNWGg8gkqFRXzelz2Pj-BlfQ'})
+token_refresco = config.OAUTH_REFRESH_TOKEN;
+
+OAuth2_client.setCredentials({ refresh_token: token_refresco})
 
 
 function send_mail(name, recipient, filename, pdf) {
@@ -81,7 +83,7 @@ const router = express.Router();
 // NO GUARDO EL PDF EN NINGÚN SITIO!!!
 
 router.post('/formulario', function (req, res) {
-  console.log('Router post: ', {req});
+  console.log('Router post: ', req.body?.data);
   let pdf = req.body.data[0];
   let pdf_filename = req.body.data[1];
   send_mail('Iñigo', 'inigopanos@gmail.com', pdf_filename, pdf);
